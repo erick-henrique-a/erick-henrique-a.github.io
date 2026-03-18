@@ -4,9 +4,6 @@ date: 2026-03-14
 categories: [Dev, Kernel_Dev]
 tags: [kernel]     # TAG names should always be lowercase
 ---
-
-## Tutorial 1: Setting up a test environment for Linux Kernel Dev using QEMU and libvirt
-
 <em>(disponível em <https://flusp.ime.usp.br/kernel/qemu-libvirt-setup/>)</em>
 
 Como aluno de mestrado na matéria de Desenvolvimento de software livre do Instituto de Matemática e Estatística da USP, tenho como avaliação, o desenvolvimento de um patch para o Kernel do <strong>Linux</strong>.
