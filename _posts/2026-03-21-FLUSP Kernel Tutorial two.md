@@ -22,4 +22,17 @@ git clone git://git.kernel.org/pub/scm/linux/kernel/git/jic23/iio.git "${IIO_TRE
 
 Variaveis importantes de se notar neste comando git, ```--branch testing --single-branch``` escolhe especificamente a branch teste deste repositório, e o comando ```--depth 10``` clona o repositório somente com os últimos 10 commits, isto é importante nesse caso pois se eu fizesse o download do repositório <em>Kernel</em> com todo o histórico de desenvolvimento, eu ocuparia um enorme espaço de memória.
 
-Ao longo do tutorial fui apresentado varios comandos do <em>Kw</em> para entender como funciona sua estrutura.
+Ao longo do tutorial fui apresentado varios comandos do <em>Kw</em> para entender como funciona sua estrutura. O processo de adaptação com o *Kw* foi bem rápido, pois seus comandos seguem uma estrutura similar aos do git, os quais eu já tinha familiaridade.
+
+Um dos pontos mais notáveis do tutorial para mim foi a secção em que eu tinha de editar o arquivo .config do kernel, mas ao invés de edita-lo diretamente, utilizei *Terminal User Interfaces* (TUI) para ter mais segurança e facilitar a visibilidade na hora de editar arquivos importantes para a compilação. Utilizei o seguinte comando *Kw*:
+```bash
+cd "$IIO_TREE"
+kw build --menu # open a TUI to safely edit the `.config`
+```
+
+Neste tutorial aprendi a configurar e executar um kernel customizado do Linux, alterando o seu nome. Para conferir se havia feito corretamente executei este comando, e obtive esta saída, confirmando a corretude do tutorial:
+
+```bash
+uname --kernel-release
+6.14.0-rc1-Erickernel+
+```

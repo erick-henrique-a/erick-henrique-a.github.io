@@ -4,3 +4,4 @@ date: 2026-03-27
 categories: [Dev, Kernel_Dev]
 tags: [kernel]
 ---
+<em>disponível em(https://flusp.ime.usp.br/kernel/modules-intro/)</em>

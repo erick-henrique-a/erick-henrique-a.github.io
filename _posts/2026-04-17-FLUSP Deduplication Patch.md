@@ -71,14 +71,14 @@ static int gfx_v11_0_eop_irq(struct amdgpu_device *adev,
 	return 0;
 }
 ```
-A função gfx_v11_0_eop_irq é a rotina de tratamento de interrupção (Interrupt Service Routine - ISR) para o sinal EOP (End Of Pipe/Packet) das engines gráficas e de computação das GPUs AMD RDNA 3 (gfx_v11_0).
+A função ``gfx_v11_0_eop_irq`` é a rotina de tratamento de interrupção (Interrupt Service Routine - ISR) para o sinal EOP (End Of Pipe/Packet) das engines gráficas e de computação das GPUs AMD RDNA 3 (gfx_v11_0).
 
 Ela é chamada pelo subsistema de interrupções do driver quando a GPU termina
 de processar um pacote de comandos. O objetivo é sinalizar para o software (driver) que o trabalho foi concluído e, assim, liberar fences e acordar processos que estavam esperando.
 
 A ferramenta **Arkanjo** apontava que esta função foi implementada na V11 e na V12 de forma idêntica, mas a primeira coisa que pensei em fazer foi verificar outras versões e ver se alguma parte delas também poderia ser reaproveitada com o Helper.
 
-Ao comparar com o código dos arquivos que tinham uma função eop: gfx_v11_0_3.c, gfx_v12_1.c e gfx_v9_4.c, concluí que nenhum deles poderia ser utilizado com o Helper, por pequenas discrepâncias entre eles.
+Ao comparar com o código dos arquivos que tinham uma função eop: ``gfx_v11_0_3.c, gfx_v12_1.c e gfx_v9_4.c``, concluí que nenhum deles poderia ser utilizado com o Helper, por pequenas discrepâncias entre eles.
 
 No início tentei transformar um switch que aparece dentro de todos esses arquivos em uma função do helper porém todos eles tem uma pequena discrepância uns cons os outros:
 
